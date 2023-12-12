@@ -3,6 +3,9 @@ extends Area2D
 
 
 @onready var speed = 400
+@onready var bg_music = %BGmusic
+@onready var enemy_hit = %EnemyHit
+
 
 
 func _ready():
@@ -28,4 +31,6 @@ func _process(delta):
 
 
 func _on_body_entered(body):
+	enemy_hit.play()
+	bg_music.stop()
 	hide()
